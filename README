@@ -1,0 +1,17 @@
+# Public - works with no header at all
+curl http://localhost:8080/api/public/info
+
+# Secure - fails without token
+curl http://localhost:8080/api/secure/profile
+# -> 401/403
+
+# Secure - works with token
+curl http://localhost:8080/api/secure/profile \
+  -H "Authorization: Bearer <token-from-login>"
+
+  ##Update Api
+
+# CORS
+# Local Flutter Web development origins are allowed by default. For deployment,
+# set app.cors.allowed-origin-patterns to the exact frontend origins, e.g.:
+# app.cors.allowed-origin-patterns=https://library.example.com
